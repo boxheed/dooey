@@ -24,10 +24,10 @@ build:
 #then ./gradlew clean verifyRelease createRelease; git push --tags; ./gradlew clean build publishPlugins bintrayUpload; fi
 
 
-  on_success:
-    - cp -R ./build/test-results/* ./shippable/testresults
-    - cp -R ./build/reports/jacoco/test/*.xml ./shippable/codecoverage
-    - cp -R ./build/libs/* ./shippable/artifacts
+#  on_success:
+#    - cp -R ./build/test-results/* ./shippable/testresults
+#    - cp -R ./build/reports/jacoco/test/*.xml ./shippable/codecoverage
+#    - cp -R ./build/libs/* ./shippable/artifacts
 
 #environment
 env:

@@ -2,7 +2,13 @@ buildscript {
 	repositories {
 		jcenter()
 	}
+	dependencies {
+        classpath "com.fizzpod:gradle-java-opinion:0.1.7"
+        classpath 'com.fizzpod:gradle-pater-build-plugin:1.1.1'
+    }
+
 }
 
 
-apply plugin: 'java'
+apply plugin: 'com.fizzpod.pater-build'
+

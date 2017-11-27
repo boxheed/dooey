@@ -25,5 +25,9 @@ dependencyManagement {
 
 dependencies {
     compile 'org.slf4j:slf4j-api'
+    
+    // https://mvnrepository.com/artifact/junit/junit
+    testCompile 'junit:junit' //:4.12'
+
 }
 

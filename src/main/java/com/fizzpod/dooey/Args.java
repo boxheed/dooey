@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Args {
 
-    List<String> args;
+    private List<String> args;
     
     public Args(String[] args) {
         this.args = Arrays.asList(args);

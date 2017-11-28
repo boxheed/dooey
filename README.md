@@ -10,3 +10,6 @@ sub commands.
 What do I mean? Well I mean that you could do something like `./app -h` to get simple help output
 as well as `./app command -h` or even `./app command subcommand -h`.
 
+## Scenarios
+
+# As a user I want to call a top level command

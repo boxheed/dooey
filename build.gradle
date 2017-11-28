@@ -15,6 +15,7 @@ repositories {
 
 apply plugin: 'com.fizzpod.pater-build'
 apply plugin: 'maven'
+apply plugin: 'groovy'
 
 dependencyManagement {
     imports {
@@ -26,8 +27,11 @@ dependencyManagement {
 dependencies {
     compile 'org.slf4j:slf4j-api'
     
+    testCompile "org.codehaus.groovy:groovy-all"
+    testCompile 'org.spockframework:spock-core'
+
     // https://mvnrepository.com/artifact/junit/junit
-    testCompile 'junit:junit' //:4.12'
+//    testCompile 'junit:junit' //:4.12'
 
 }
 

@@ -7,7 +7,7 @@ import java.util.Collection;
 
 public class Main {
 
-    private static Services services = new Services();
+    private static CommandRegistry services = new CommandRegistry();
 
     public static void main(String[] args) throws IOException {
         if (args.length > 0) {
@@ -18,7 +18,7 @@ public class Main {
     }
 
     private static void outputCommands() {
-        Collection<Command> commands = services.getServices(Command.class);
+        Collection<Command> commands = services.getCommands(Command.class);
         for(Command<?> command: commands) {
             CommandDescription desc = command.getDescription();
             System.out.println(desc.getOperator() + " - " + desc.getDescription());
@@ -28,7 +28,7 @@ public class Main {
     @SuppressWarnings("unchecked")
     private static void findAndRunCommand(String[] args) {
         ServiceContext context = new ServiceContext(args, services);
-        Command<? extends Object> command = services.getService(Command.class, context);
+        Command<? extends Object> command = services.getCommand(Command.class, context);
         try {
             command.call();
         } catch (Exception e) {

@@ -4,13 +4,13 @@ public class ServiceContext {
 
     private Args args;
     
-    private Services services;
+    private CommandRegistry commandRegistry;
 
     
-    public ServiceContext(String[] args, Services services) {
+    public ServiceContext(String[] args, CommandRegistry commandRegistry) {
         super();
         this.args = new Args(args);
-        this.services = services;
+        this.commandRegistry = commandRegistry;
     }
 
     public String getCommand() {
@@ -21,8 +21,8 @@ public class ServiceContext {
         return args.getCommandAfter(command);
     }
     
-    public Services getServices() {
-        return services;
+    public CommandRegistry getServices() {
+        return commandRegistry;
     }
 
     

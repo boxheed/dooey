@@ -7,10 +7,13 @@ import java.util.List;
 
 import javax.imageio.spi.ServiceRegistry;
 
-class Services {
+/**
+ * 
+ */
+class CommandRegistry {
 
-    <T> T getService(Class<T> serviceClazz, ServiceContext context) {
-        Iterator<T> services = ServiceRegistry.lookupProviders(serviceClazz);
+    <T> T getCommand(Class<T> commandClazz, ServiceContext context) {
+        Iterator<T> services = ServiceRegistry.lookupProviders(commandClazz);
         while(services.hasNext()) {
             T service = services.next();
             if(service instanceof Command) {
@@ -21,11 +24,11 @@ class Services {
                 return service;
             }
         }
-        throw new IllegalArgumentException("Could not find service implementation for " + serviceClazz);
+        throw new IllegalArgumentException("Could not find service implementation for " + commandClazz);
     }
     
-    <T> Collection<T> getServices(Class<T> serviceClazz) {
-        Iterator<T> services = ServiceRegistry.lookupProviders(serviceClazz);
+    <T> Collection<T> getCommands(Class<T> commandClazz) {
+        Iterator<T> services = ServiceRegistry.lookupProviders(commandClazz);
         List<T> results = new LinkedList<>();
         while(services.hasNext()) {
             T service = services.next();
